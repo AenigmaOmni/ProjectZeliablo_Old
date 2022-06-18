@@ -5,4 +5,6 @@ SCALE_FACTOR = 3
 FPS_CAP = 120
 TITLE = "Zeliablo: Legend of the Lord Sabre"
 
-
+C_IMAGE = 0
+C_POSITION = 1
+C_IMAGELIST = 2

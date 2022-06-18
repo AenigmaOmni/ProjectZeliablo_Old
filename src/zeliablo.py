@@ -2,7 +2,7 @@ from tkinter.tix import WINDOW
 import pygame
 from pygame.locals import *
 from src.globals import *
-
+from src.contentManager import ContentManager
 class Game:
     def __init__(self):
         self.running = True
@@ -16,6 +16,8 @@ class Game:
         self.lastTime = 0
 
     def postInit(self):
+        self.content = ContentManager()
+        self.content.load()
         self.font = pygame.font.SysFont(None, 40)
 
     def processEvents(self):
@@ -30,11 +32,14 @@ class Game:
         self.lastTime = t
 
         #update here
-        ...
+        self.content.currentStage.update(self.screen)
 
     def draw(self):
         self.screen.fill( (0,0,0) )
         
+        #draw here
+        self.content.currentStage.render(self.screen)
+
         fpsSurface = self.font.render("FPS: " + str(round(self.fpsClock.get_fps())), True, (255, 255, 255))
         self.screen.blit(fpsSurface, (20,20))
 

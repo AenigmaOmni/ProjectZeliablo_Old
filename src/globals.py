@@ -1,0 +1,8 @@
+WINDOW_WIDTH = 1280
+WINDOW_HEIGHT = 720
+MAX_SOUND_CHANNELS = 16
+SCALE_FACTOR = 3
+FPS_CAP = 120
+TITLE = "Zeliablo: Legend of the Lord Sabre"
+
+
